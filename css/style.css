@@ -1,0 +1,427 @@
+﻿@charset "utf-8"; /*для отображения русских символов*/
+
+* { /*абсолютно ко всему документу*/
+    margin: 0px; /*отступы будем указывать сами*/
+    padding: 0px;
+    outline: none; /*чтоб на форме не было подсвечиваний при наведении*/
+}
+
+html {
+    height: 100%;
+}
+/*наш док-т html будет высотой 100%*/
+
+body {
+    width: 100%; /*ширина и высота тела будет на полный экран*/
+    height: 100%;
+    float: left;
+   /* display: block;*/
+    /*background-image: url(/img/background1.jpg);*/
+    background-color: #F5F5F5;
+    color: #2f4f4f;
+    font-family: "Segoe UI", Comic, sans-serif;
+    font-size: 1.2em;
+    line-height: 135%; /*высота между строчек*/
+}
+
+/*сразу добавим ко ВСЕМ ссылкам цвет*/
+a {
+    color: #6A5ACD;
+    text-decoration: none; /*подчеркивания ссылки не будет!!!*/
+}
+
+    a:hover {
+        color: #ffffff; /*эффект ссылки при наведении на нее*/
+    }
+
+    a, a:hover {
+        font-weight: bold;
+        -webkit-transition: all .6s ease; /*это значит что ссылки будут менять свой цвет плавно в браузере Safari*/
+        -moz-transition: all .6s ease; /*это значит что ссылки будут менять свой цвет плавно в браузере Mozilla*/
+        -o-transition: all .6s ease; /*это значит что ссылки будут менять свой цвет плавно в браузере Opera*/
+        transition: all .6s ease; /*это значит что ссылки будут менять свой цвет плавно */
+    }
+
+img { /*прописываем стили для всех изображений чтобы они никогда не выходили за рамки установленные*/
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /*надо для ie8*/
+}
+
+.clear {
+    clear: both; /*этот класс будет отделять одну часть сайта от другой - будет делать пустую строку*/
+}
+
+/*стили для ШАПКИ*/
+header {
+    width: 98%; /*ширина всегда должна быть 100% (с учетом margin/padding), тогда ничего не будет вылазить за экран*/
+    height: 5%;
+    float: left;
+    padding: 1%;
+    background-color: #C0C0C0;
+    color: #FFF5EE;
+    border-bottom: 1px solid #6A5ACD;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    header #logo {
+        width: 25%;
+        float: left;
+        font-size: 2em;
+        font-weight: bold;
+        color: #6A5ACD;
+    }
+
+    header #menuHead {
+        width: 20%;
+        text-align: right;
+        float: right;
+        padding: 5px;
+    }
+
+        header #menuHead span {
+            color: #6A5ACD;
+        }
+/*Стили для основной центральной части страницы*/
+/*левая колонка*/
+#wrapper {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+}
+
+    #wrapper #leftCol {
+        width: 70%;
+        margin-right: 10%;
+        float: left;
+    }
+
+        #wrapper #leftCol #msg_show {
+            width: 100%;
+            text-align: center;
+            float: left;
+            color: red;
+        }
+        /*стили для левой колонки - форма для отправленных сообщений от гостей*/
+        #wrapper #leftCol div#all_send-msg {
+            width: 100%;
+            float: left;
+            padding: 5px;
+        }
+
+        #wrapper #leftCol div#send-msg {
+            border: 1px solid #6A5ACD;
+            /*text-align: center;*/
+            padding: 5px;
+            width: 100%;
+            margin: 5px;
+        }
+#wrapper #leftCol div#send-msg #sendNameSbj{
+    font-size: 1em;
+}
+#wrapper #leftCol div#send-msg #sendName,
+#wrapper #leftCol div#send-msg #sendNameCity,
+#wrapper #leftCol div#send-msg #puttime,
+#wrapper #leftCol div#send-msg #sendNameEmail,
+#wrapper #leftCol div#send-msg #sendNameUrl{
+    font-size: 0.7em;
+    text-align: right;
+    line-height: normal;
+}
+            #wrapper #leftCol div#menuDiv {
+                width: 100%;
+                text-align: right;
+                display: block;
+                border: 2px solid #6A5ACD;
+                color: #6A5ACD;
+                padding: 3px;
+                margin-left: 6px;
+                background-color: #C0C0C0;
+            }
+#nameAdmin{
+font-weight: bold;
+}
+
+    /*правая колонка*/
+    #wrapper #rightCol {
+        float: right;
+        width: 20%;
+
+    }
+
+        #wrapper #rightCol .banner {
+            width: 100%;
+            float: right;
+            margin-bottom: 20px;
+        }
+    /*Стили для формы в левой колонке*/
+#wrapper #leftCol #frmClient{
+   /* position: relative;*/
+    width: 100%;
+    margin-left: 2.5%;
+    float: left;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+    /*border: 1px solid red;*/
+}
+
+    #wrapper #leftCol #frmClient input#name,
+    #wrapper #leftCol #frmClient input#city,
+    #wrapper #leftCol #frmClient input#email,
+    #wrapper #leftCol #frmClient input#url_adress,
+    #wrapper #leftCol #frmClient input#sbj,
+    #wrapper #leftCol #frmClient input#done{
+        width: 40%;
+        margin-left: 30%;
+        float: left;
+        border-radius: 5px;
+        border: 2px solid silver;
+        padding: 5px;
+        color: #6A5ACD;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+
+#wrapper #leftCol input#name:focus,
+#wrapper #leftCol input#city:focus,
+#wrapper #leftCol input#email:focus,
+#wrapper #leftCol input#url_adress:focus,
+#wrapper #leftCol input#sbj:focus,
+        #wrapper #leftCol textarea#msg:focus {
+            border: 2px solid red;
+        }
+
+        #wrapper #leftCol input#done:hover {
+            border: 2px solid #6A5ACD;
+            cursor: pointer;
+        }
+
+    #wrapper #leftCol textarea#msg {
+        width: 50%;
+        margin-left: 25%;
+        float: left;
+        border-radius: 5px;
+        border: 2px solid silver;
+        padding: 5px;
+        color: #6A5ACD;
+        margin-bottom: 10px;
+        font-size: 1em;
+        resize: none;
+        height: 150px;
+    }
+    /*Стили для reg.php*/
+    #wrapper #leftCol input#registration:hover {
+        border: 2px solid #6A5ACD;
+        cursor: pointer;
+    }
+
+    /*Стили для ВСПЛЫВАЮЩЕЙ ФОРМЫ регистрации АДМИНА*/
+.modalContent {
+    position: fixed;
+    top: 120px;
+    left:50%;
+    z-index: 20;
+    border: 1px solid white;
+    background-color: #6A5ACD;
+    width: 500px;
+    margin-left: -350px;
+    height: 200px;
+    padding: 20px 50px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7); /*тень от формы фхода */
+}
+.modalContentClose{
+    position: absolute;
+    top:0;
+    right: -34px;
+width: 22px;
+    height: 22px;
+    font-size: 0px;
+   /* background-color: red;*/
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+}
+.modalContentTitle {
+    text-align: center;
+    font-size: 1.5em;
+    padding-bottom: 30px;
+}
+.loginUser,
+.passwordUser{
+    width: 40%;
+    margin-left: 30%;
+    float: left;
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.btn{
+    width: 43%;
+    margin-left: 30%;
+    float: left;
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.btn:focus,
+.btn:hover{
+    background-color:#6A5ACD ;
+    color: #F5F5F5;
+}
+.modalOverlay{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+#error{
+    width: 100%;
+    text-align: center;
+    float: left;
+    color: #FFF5EE;
+}
+/*знач закрыть на кнопке*/
+.modalContentClose::before,
+.modalContentClose::after{
+    content: '';
+    position: absolute;
+    top:10px;
+    left:2px;
+    width: 19px;
+    height: 3px;
+    background-color:#6A5ACD;
+    border-radius: 1px;
+}
+.modalContentClose::before{
+    transform: rotate(45deg);
+}
+.modalContentClose::after{
+    transform: rotate(-45deg);
+}
+/*Стили для формы ответа админа*/
+#wrapper #leftCol #adminAnswer #adminAnswerForm{
+    width: 300px;
+    border: 1px solid;
+
+   /* display: block;*/
+    margin-left: 20%;
+}
+#wrapper #leftCol .adminClass label{
+    width: 40%;
+    margin-left: 45%;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+#wrapper #leftCol .adminClass input{
+    width: 40%;
+    margin-left: 30%;
+    float: left;
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+#wrapper #leftCol .adminClass textarea{
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+    resize: none;
+    height: 100px;
+}
+#wrapper #leftCol .adminClass input:focus,
+#wrapper #leftCol .adminClass textarea:focus{
+    border: 2px solid #6A5ACD;
+}
+#wrapper #leftCol .adminClass input:hover
+{
+    background-color: #6A5ACD;
+    border: 2px solid #6A5ACD;
+    color: silver;
+}
+/*Стили для формы редактирования сообщения клиента Админом*/
+#wrapper #leftCol #edit #editMsgForm{
+    width: 470px;
+   /* border: 1px solid;*/
+    margin-left: 20%;
+}
+#wrapper #leftCol .editMsgClass textarea{
+    width: 97%;
+  /*  margin-left: 10%;*/
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+    resize: none;
+    height: 100px;
+}
+#wrapper #leftCol .editMsgClass input{
+    width: 70%;
+    margin-left: 15%;
+    float: left;
+    border-radius: 5px;
+    border: 2px solid silver;
+    padding: 5px;
+    color: #6A5ACD;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+#wrapper #leftCol .editMsgClass input:focus,
+#wrapper #leftCol .editMsgClass textarea:focus{
+    border: 2px solid #6A5ACD;
+}
+#wrapper #leftCol .editMsgClass input:hover
+{
+    background-color: #6A5ACD;
+    border: 2px solid #6A5ACD;
+    color: silver;
+}
+/*Стили для FOOTER*/
+footer {
+    width: 98%;
+    float: left;
+    padding: 1%;
+    background-color: #C0C0C0;
+    border-top: 1px solid #6A5ACD;
+    margin-top: 10px;
+}
+
+    footer #social {
+        float: left;
+        width: 50%;
+    }
+
+    footer #right {
+        color: #6A5ACD;
+        text-align: right;
+        font-size: 0.9em;
+    }
+
+    footer #social img {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 5px;
+    }
